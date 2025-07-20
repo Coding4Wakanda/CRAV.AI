@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lightbody Meal Prep Menu</title>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div id="app" class="max-w-6xl mx-auto py-12 px-4">
+    <h1 class="text-4xl font-bold text-center mb-8 text-blue-700">🌱 Lightbody Meal Prep Menu</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div v-for="(item, index) in meals" :key="index" class="bg-white rounded-lg shadow p-6 hover:shadow-xl transition-shadow">
+        <h2 class="text-xl font-semibold text-green-700">{{ item.name }}</h2>
+        <p class="mt-2 text-sm">{{ item.description }}</p>
+        <p class="mt-4 text-xs text-gray-500 italic">Vegan • Organic • High Vibration</p>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          meals: [
+            { name: "Quinoa Chickpea Bowl", description: "Protein-packed bowl with kale, hummus, and tahini drizzle." },
+            { name: "Thai Peanut Noodles", description: "Rice noodles in creamy peanut sauce with bok choy and tofu." },
+            { name: "Sweet Potato Buddha Bowl", description: "Roasted sweet potato, black beans, and avocado lime mash." },
+            { name: "Spicy Lentil Soup", description: "Warming red lentil soup with turmeric and cumin." },
+            { name: "Miso Ginger Stir-Fry", description: "Veggie-packed stir fry with miso-ginger glaze over brown rice." },
+            { name: "Coconut Curry Chickpeas", description: "Chickpeas in rich coconut curry with jasmine rice." },
+            { name: "Stuffed Bell Peppers", description: "Peppers filled with quinoa, spinach, and nutritional yeast." },
+            { name: "Jackfruit BBQ Wrap", description: "Pulled jackfruit in tangy BBQ sauce with slaw in a wrap." },
+            { name: "Tofu Scramble Bowl", description: "Savory tofu with peppers, onions, and turmeric on greens." },
+            { name: "Black Bean Burrito Bowl", description: "Spiced beans with corn salsa and guac over basmati." },
+            { name: "Avocado Kale Pasta", description: "Gluten-free noodles with creamy avocado pesto." },
+            { name: "Chili Lime Cauliflower", description: "Roasted cauliflower bites with chili lime glaze." },
+            { name: "Rainbow Veggie Tacos", description: "Beet, carrot, cabbage and tofu tacos on corn tortillas." },
+            { name: "Creamy Mushroom Quinoa", description: "Quinoa with garlic mushrooms in coconut cream sauce." },
+            { name: "Herbed Lentil Patties", description: "Lentil and herb patties with green tahini dip." },
+            { name: "Zucchini Noodle Pad Thai", description: "Zoodles in almond butter sauce with cilantro and lime." },
+            { name: "Falafel Bowl", description: "Baked falafel over tabbouleh with lemon tahini dressing." },
+            { name: "Tempeh Power Plate", description: "Grilled tempeh with roasted squash and wild rice." },
+            { name: "Coconut Millet Porridge", description: "Creamy coconut breakfast bowl with seeds and berries." },
+            { name: "Roasted Veggie Wrap", description: "Mixed veggies with hummus in a spinach tortilla." },
+            { name: "Ginger Garlic Bok Choy", description: "Bok choy sautéed in ginger garlic glaze with tofu." },
+            { name: "Hearty Vegan Chili", description: "3-bean chili with fire-roasted tomatoes and cumin." },
+            { name: "Savory Quinoa Porridge", description: "Hearty savory quinoa with spinach and mushrooms." },
+            { name: "Turmeric Cauliflower Rice", description: "Low-carb rice with turmeric, peas, and herbs." },
+            { name: "Alkaline Green Soup", description: "Kale, zucchini, avocado, and lime blended warm." },
+            { name: "Stuffed Eggplant Boats", description: "Baked eggplant with lentil-tomato stuffing." },
+            { name: "Crispy Baked Tofu Cubes", description: "Coconut-ginger marinated tofu cubes." },
+            { name: "Lemon Tahini Chickpea Bowl", description: "Chickpeas, red cabbage, brown rice and tahini." },
+            { name: "Detox Green Juice", description: "Cucumber, kale, ginger, lemon, and apple." },
+            { name: "Date Almond Bliss Balls", description: "Snacks made with dates, oats, almond butter, cacao." }
+          ]
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
